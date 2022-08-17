@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,46 @@
     <title>Transaction page</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <h1>Deposit</h1>
-    <h1>withdraw</h1>
-    <h1>Balance</h1>
-    
+
+
+    <main class="container mx-auto w-[80%]  mt-10">
+        <section>
+            <div class="grid grid-cols-1 place-items-center mb-8">
+                <div class="bg-green-600  rounded-lg text-center w-2/5 py-5 flex justify-center items-center flex-col">
+                    <h1 class="text-xl  text-white font-semibold">Balance</h1>
+                    <h1 class="text-5xl font-bold text-white">$<span>00</span></h1>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 place-items-center gap-x-5">
+                <div class="bg-sky-500  rounded-lg text-center py-3 w-4/5 flex justify-center items-center flex-col">
+                    <h1 class="text-xl  text-white font-semibold">Deposit</h1>
+                    <h1 class="text-4xl font-bold text-white">$<span>00</span></h1>
+                </div>
+
+                <div
+                    class="bg-fuchsia-500  rounded-lg text-center py-3 w-4/5 flex justify-center items-center flex-col">
+                    <h1 class="text-xl  text-white font-semibold">Withdraw</h1>
+                    <h1 class="text-4xl font-bold text-white">$<span>00</span></h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-2 place-items-center gap-x-5 mt-10">
+            <div class="bg-sky-200 rounded-lg text-center py-3 w-4/5 flex justify-center items-center flex-col">
+                <input class="text-center rounded-lg p-2 mb-3 text-xl" type="text" placeholder="Deposit Amount" >
+                <button class="bg-sky-500 px-3 py-1 font-bold text-white rounded-lg hover:bg-green-500">Deposit</button>
+            </div>
+            <div class="bg-fuchsia-200 rounded-lg text-center py-3 w-4/5 flex justify-center items-center flex-col">
+                <input class="text-center rounded-lg p-2 mb-3 text-xl" type="text" placeholder="Withdraw Amount" >
+                <button class="bg-fuchsia-500 px-3 py-1 font-bold text-white rounded-lg hover:bg-green-500">Withdraw</button>
+            </div>
+        </section>
+
+    </main>
+
 </body>
+
 </html>
