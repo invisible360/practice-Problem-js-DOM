@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event handler</title>
+</head>
+
+<body>
+    <h1>Evenet Handler</h1>
+    <!-- ======================================= -->
+    <!-- 
+<button onclick="makeRed ()">Make BG red</button> // makeRed() call kore dite hobe
+    <script>
+        function makeRed () {
+            document.body.style.backgroundColor = 'red';
+        }
+        
+    </script> -->
+    <!-- ======================================== -->
+
+    <!-- using onclick -->
+    <!-- <button id="make-green">Make BG Green</button>
+    <script>
+        document.getElementById ('make-green').onclick = makeGreen; // makeRed() call korar dorkar nai
+        function makeGreen () {
+        document.body.style.backgroundColor = 'green';
+    }
+    </script> -->
+    <!-- ======================================== -->
+
+    <!-- using onclick -->
+    <!-- <button id="make-green">Make BG Green</button>
+    <script>
+        document.getElementById ('make-green').onclick = function makeGreen () {
+        document.body.style.backgroundColor = 'green';
+    }
+    </script> -->
+    <!-- ======================================== -->
+
+    <!-- <button id="make-yellow">Make BG yellow</button>
+    <script>
+        document.getElementById ('make-yellow').addEventListener ('click', function () {
+            
+            document.body.style.backgroundColor = 'yellow';
+        });
+    
+    </script> -->
+
+    <!-- ======================================== -->
+
+    <!-- Button click kore ekta h3 tag er text change kora  -->
+    <!--     <h3 id="change-text">Default Text</h3>
+    <button id="update-btn">click to Change the text</button>
+
+    <script>
+        document.getElementById ('update-btn').addEventListener ('click', function () {
+            const changedText = document.getElementById ('change-text');
+            changedText.innerHTML = 'I changed because click event occured';
+        });
+    </script> -->
+    <!-- ======================================== -->
+
+
+    <!-- Input er text k ‘update’ button diye oi text k niye kono ekta <P> tag er text dara replace kora: -->
+    <!-- 
+    <p id="text-from-input">Default input text</p>
+    <input id="input-field" type="text">
+    <button id="update-btn">update</button>
+
+    <script>
+        document.getElementById('update-btn').addEventListener('click', function () {
+        const inputField = document.getElementById ('input-field');
+        const inputText = inputField.value;// input field theke text neyar jonno innerText use kra jabe na, value use korte hobe
+
+        document.getElementById ('text-from-input').innerText = inputText;
+        inputField.value = '';
+        });
+    </script>
+ -->
+    <!-- ======================================== -->
+
+    <!-- Create a comment box and display comment -->
+    <!-- 
+    <div id="comments-container">
+        <h2>Write something in below box for posting.</h2>
+    </div>
+
+    <textarea name="" id="text-area" cols="90" rows="5" style="font-size: 20px;"></textarea>
+    <br>
+    <button id="post-btn">Post</button>
+
+    <script>
+        document.getElementById('post-btn').addEventListener('click', function () {
+            const textField = document.getElementById('text-area'); // ei variable create korte hobe karon last a texarea box clear korar jonno
+            const inputText = textField.value; // take new comment from user
+
+            const commentContainer = document.getElementById('comments-container');// where to add new comment
+            const paragraph = document.createElement('span'); // create new <span> element to store new comment
+            paragraph.innerText = inputText; // transfer new comment to newly created <span> tag
+
+            const paragraph2 = document.createElement('span'); // create new <span> element to store new comment
+            paragraph2.innerText = '1.'; // transfer new comment to newly created <span> tag [EKHANE KISU KAJ KORE 1,2,3,4,5....EVABE KORAR CESTA KORBO IN FUTURE A]
+
+            const paragraph3 = document.createElement('p'); // create new <p> element to make a new line
+            paragraph3.innerText = ''; // creating a new line
+
+            commentContainer.appendChild(paragraph2);
+            commentContainer.appendChild(paragraph);
+            commentContainer.appendChild(paragraph3);
+            textField.value = '';
+        });
+    </script>
+ -->
+    <!-- ======================================== -->
+
+
+    <!-- Simple github like delete confirmation button -->
+
+    <!-- 
+    <h2 id="secret-info">secret Info</h2>
+    <p>type 'delete' to delete the secret info</p>
+    <input type="text" placeholder="delete" id="write-delete">
+    <button id="delete-btn" disabled>Click to Delete</button>
+
+    <script>
+
+        //deleting the secret info
+        document.getElementById('delete-btn').addEventListener('click', function (event) {
+            const secretInfoField = document.getElementById('secret-info');
+            secretInfoField.style.display = 'none';
+        });
+
+        //confirming 'delete' keyword typing
+        document.getElementById('write-delete').addEventListener('keyup', function (event) {
+            const text = event.target.value;
+            if (text === 'delete') {
+                document.getElementById('delete-btn').removeAttribute('disabled');
+            }
+            else {
+                document.getElementById('delete-btn').setAttribute('disabled', true);
+
+            }
+        });
+
+    </script>
+ -->
+
+
+ 
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Practice</title>
+</head>
+
+<body>
+    <h1 id="head1">headings - 1</h1>
+    <!-- <h1>headings - 2</h1>
+    <h1>headings - 3</h1>
+    <h1>headings - 4</h1>
+    <h1>headings - 5</h1>
+    <h1>headings - 6</h1>
+    <h1>headings - 7</h1>
+    <h1>headings - 8</h1> -->
+
+    <h3 id="fruits-title">Fruits Title</h3>
+
+    <a href=""><img src="img/zakirsnowmanchotopic.jpeg" alt="" id="anchor-image">google.com</a>
+
+    <ul class="list-container dilam1 dilam2 dilam3" id="list-list">
+        <li>list - 1 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, cumque.</p>
+        </li>
+        <li>list - 2 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, cumque.</p>
+        </li>
+        <li>list - 3 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, cumque.</p>
+        </li>
+        <li>list - 4 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, cumque.</p>
+        </li>
+    </ul>
+
+    <section id="section-conatiner">
+        <div>
+            <h3>title-1</h3>
+            <ul>
+                <li>list - 1</li>
+                <li>list - 2</li>
+                <li>list - 3</li>
+                <li>list - 4</li>
+            </ul>
+        </div>
+        <div>
+            <h3>title-2</h3>
+            <ul id="first-list">
+                <li>list - 1</li>
+                <li>list - 2</li>
+                <li>list - 3</li>
+                <li>list - 4</li>
+            </ul>
+        </div>
+        <div>
+            <h3>title-3</h3>
+            <ul>
+                <li>list - 1</li>
+                <li>list - 2
+                    <ul>
+                        <li id="tor-poricoy-ki">sdfd</li>
+                        <li>sdfsd</li>
+                    </ul>
+                </li>
+                <li>list - 3</li>
+                <li>list - 4</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        // console.log(document);
+        // const liCollection = document.getElementsByTagName ('li');
+        // console.log ('cheking')
+        // console.log (liCollection[0].innerText);
+
+        /* 
+                for (const li of liCollection) {
+                    console.log(li.innerText);
+                }
+        */
+        /*         const h1Collection = document.getElementsByTagName('h1');// returns all element with same class name
+                console.log(h1Collection[0].innerHTML);
+                for (const h1 of h1Collection) {
+                    console.log(h1.innerHTML);
+                }
+                console.log (document.getElementById ('head1')) // return only that element */
+// ==================================================================================================================
+
+        /* 
+                //querySelector[select only first element either by '#id or .class or tag'] and querySelectorAll
+                const someLi = document.querySelectorAll ('.list-container li') // class name and li tag
+                //console.log(someLi);// ekhane someLi.innerText or innerHTML kaj korbe na karon ekhane HTML er collection ache, tai eke loop through kore alada kore then innerText alada korte hobe. Nicher moto:
+        
+                for (const li of someLi) {
+                    const singleLi = li;
+                    console.log (singleLi.innerText);
+                } */
+
+        /* const queryAll = document.querySelectorAll ('li'); // li tag
+        console.log (queryAll);
+         */
+
+// ==================================================================================================================
+
+        //styling through JS
+        /* const dynamicStyle = document.getElementById('fruits-title');
+        dynamicStyle.style.color = 'blue'; */
+// ==================================================================================================================
+
+        /* 
+        //getting attribute using getAttribute or classList, classList.add or classList.remove
+        const attributes = document.getElementById ('list-list');
+       //  console.log (attributes.getAttribute ('class'));
+       //  console.log (attributes.classList);
+        console.log (attributes.classList.add('dilam4'), 'added dilam4');
+        console.log ('remove korar age: ', attributes.classList);
+        console.log (attributes.classList.remove('dilam4'), 'removed dilam4');
+        console.log ('remove korar pore: ' ,attributes.classList);
+         */
+// ==================================================================================================================
+        /* 
+        //setting attribute using setAttribute
+        const seetingAtt = document.getElementById ('anchor-image')
+      //   console.log (seetingAtt);
+      seetingAtt.setAttribute('width','500px')// setAttribute diye only ekta attribute add kora jabe
+
+      //seetingAtt.setAttribute('width'<- attribute name,'500px'<- attribute value)
+
+      //seetingAtt.setAttribute('width'<- attribute name,'500px'<- attribute value,'height', '800px')// setAttribute diye 2ta attribute add kora jabe NA
+
+      seetingAtt.setAttribute('height', '800px')
+      */
+// ==================================================================================================================
+        /* 
+        //parentNode, childNodes
+        const parentChild = document.getElementById ('tor-poricoy-ki');
+        const parentChild2 = document.getElementById ('section-conatiner');
+        // console.log (parentChild);
+        // console.log (parentChild2);
+        // console.log (parentChild.childNodes);
+        // console.log (parentChild2.childNodes);
+        // console.log (parentChild2.childNodes[1].childNodes);
+        // console.log ('parentChild2.childNodes[1].childNodes[1]')
+        // console.log (parentChild2.childNodes[1].childNodes[1]);
+        console.log (parentChild.parentNode);// ul
+        console.log (parentChild.parentNode.parentNode); // li
+        console.log (parentChild.parentNode.parentNode.parentNode); // ul
+        console.log (parentChild.parentNode.parentNode.parentNode.parentNode); // div
+        console.log (parentChild.parentNode.parentNode.parentNode.parentNode.parentNode); // section
+         */
+// ==================================================================================================================
+
+        //create html element using JS ID diye
+        /* 
+        //where to addd
+        const newElementWillBeAddedIn = document.getElementById ('first-list');
+        console.log (newElementWillBeAddedIn);
+
+        //what to add
+        const newLi = document.createElement ('li');
+        newLi.innerText = 'This list item is created from js';
+        //console.log (newLi);
+
+        //add this child to the parent (where to add)
+        newElementWillBeAddedIn.appendChild(newLi);
+        */
+// ==================================================================================================================
+        //create html element using JS class diye [jehetu collection tai loop diye element append korte hobe]
+        /* 
+        const newElementWillBeAddedIn = document.getElementsByTagName('ul');
+        console.log(newElementWillBeAddedIn);
+
+        for (const newele of newElementWillBeAddedIn) {
+            console.log(newele);
+
+            const newLi = document.createElement('li');
+            newLi.innerText = 'This list item is created from js';
+            newLi.style.backgroundColor = 'yellow';
+            console.log(newLi);
+
+            newele.appendChild(newLi);
+            
+
+        }
+ */
+//==================================================================================================================
+    </script>
+
+<!-- showing connection -->
+    <script src="js/dom-explore.js"></script>
+</body>
+
+
+</html>
