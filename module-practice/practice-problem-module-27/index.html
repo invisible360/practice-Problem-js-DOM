@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice mod-27</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <!-- প্রাকটিস প্রব্লেম 
+
+একটা ওয়েবসাইট এ একটা input ফিল্ড থাকবে। তার সাথে একটা বাটন থাকবে double নামে। তুমি ইনপুট ফিল্ড এ যদি কোন সংখ্যা লিখো তাহলে নিচে সেই সংখ্যা ডাবল করে দেখাবে। আরেকটা বাটন থাকবে triple নামে। সেটাতে ক্লিক করলে ইনপুট ফিল্ড এ যে সংখ্যা আছে সেটা তিনগুণ হয়ে যাবে। সেই সংখ্যা নিচে দেখাবে। আর যদি ইনপুট ফিল্ড এ সংখ্যা ছাড়া কোন কথা লিখে তাহলে একটা এলার্ট (alert) দিয়ে বলবে Please enter a number। এলার্ট ক্যামনে দেয় সেটা নিয়ে বিস্তারিত অনেকদিন পরে আমরা ই দেখায় দিবো। আপাতত দেখো গুগলে সার্চ দিয়ে কিছু বের করতে পারো কিনা। -->
+
+    <section class="conatiner mx-auto w-[80%] bg-orange-200 rounded-xl">
+        <h1 class="text-4xl font-bold text-center mt-10  p-5">Practice Problem Module-27</h1>
+
+        <div class="mt-5 flex flex-col items-center justify-center p-4">
+            <h1 class="font-bold mb-2">Output = <span id="updated-value">0</span></h1>
+            <input id="input-value" class="border-2 text-center rounded-md" type="text">
+            
+            <button id="double-btn"
+                class="bg-lime-500 text-white font-bold px-2 rounded-md m-2 hover:bg-red-500">Double</button>
+
+            <button id="triple-btn"
+                class="bg-emerald-700 text-white font-bold px-2 rounded-md my-2  hover:bg-red-500">Triple</button>
+        </div>
+    </section>
+
+    <script src="multi.js"></script>
+</body>
+
+</html>
