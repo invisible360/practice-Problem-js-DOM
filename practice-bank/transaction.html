@@ -12,12 +12,13 @@
 <body>
 
     <main class="container mx-auto w-[80%]  mt-10">
+        <h1 class="text-5xl font-bold text-center mb-10"><span class="text-orange-500">টাকা</span> আদান-প্রদান</h1>
         <!-- Display all amount -->
         <section>
             <!-- Balance -->
             <div class="grid grid-cols-1 place-items-center mb-8">
                 <div class="bg-green-600  rounded-lg text-center w-2/5 py-5 flex justify-center items-center flex-col">
-                    <h1 class="text-xl  text-white font-semibold">Balance</h1>
+                    <h1 class="text-xl  text-white font-semibold">ব্যালেন্স</h1>
                     <h1 class="text-5xl font-bold text-white"><b>&#2547 </b><span id="balance-amount">00</span></h1>
                 </div>
             </div>
@@ -25,14 +26,14 @@
             <div class="grid grid-cols-2 place-items-center gap-x-5">
                 <!-- Deposit -->
                 <div class="bg-sky-500  rounded-lg text-center py-3 w-4/5 flex justify-center items-center flex-col">
-                    <h1 class="text-xl  text-white font-semibold">Deposit</h1>
+                    <h1 class="text-xl  text-white font-semibold">জমা</h1>
                     <h1 class="text-4xl font-bold text-white"><b>&#2547 </b><span id="deposit-amount">00</span></h1>
                 </div>
 
                 <!-- Withdraw -->
                 <div
                     class="bg-fuchsia-500  rounded-lg text-center py-3 w-4/5 flex justify-center items-center flex-col">
-                    <h1 class="text-xl  text-white font-semibold">Withdraw</h1>
+                    <h1 class="text-xl  text-white font-semibold">উত্তোলন</h1>
                     <h1 class="text-4xl font-bold text-white"><b>&#2547 </b><span id="withdraw-amount">00</span></h1>
                 </div>
             </div>
@@ -42,14 +43,18 @@
         <section class="grid grid-cols-2 place-items-center gap-x-5 mt-10">
             <!-- deposit field -->
             <div class="bg-sky-200 rounded-lg text-center py-3 w-4/5 flex justify-center items-center flex-col">
-                <input id="deposit-field" class="text-center rounded-lg p-2 mb-3 text-xl" type="text" placeholder="Deposit Amount">
-                <button id="deposit-btn" class="bg-sky-500 px-3 py-1 font-bold text-white rounded-lg hover:bg-green-500">Deposit</button>
+                <input id="deposit-field" class="text-center rounded-lg p-2 mb-3 text-xl w-3/4" type="text"
+                    placeholder="&#2547 জমার পরিমান">
+                <button id="deposit-btn"
+                    class="bg-sky-500 px-3 py-1 font-bold text-white rounded-lg hover:bg-green-500">জমার পরিমান</button>
             </div>
 
             <!-- Withdraw Field -->
             <div class="bg-fuchsia-200 rounded-lg text-center py-3 w-4/5 flex justify-center items-center flex-col">
-                <input id="withdraw-field" class="text-center rounded-lg p-2 mb-3 text-xl" type="text" placeholder="Withdraw Amount">
-                <button id="withdraw-btn" class="bg-fuchsia-500 px-3 py-1 font-bold text-white rounded-lg hover:bg-green-500">Withdraw</button>
+                <input id="withdraw-field" class="text-center rounded-lg p-2 mb-3 text-xl w-3/4" type="text"
+                    placeholder="&#2547 উত্তোলনের পরিমান">
+                <button id="withdraw-btn"
+                    class="bg-fuchsia-500 px-3 py-1 font-bold text-white rounded-lg hover:bg-green-500">উত্তোলনের পরিমান</button>
             </div>
         </section>
 

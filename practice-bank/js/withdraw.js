@@ -12,13 +12,20 @@ document.getElementById('withdraw-btn').addEventListener('click', function () {
         const previousAmount = getTextElementFromTag('withdraw-amount')
         const previousAmountStringConvertedIntoNumber = stringToNumber(previousAmount);
 
-        // update withdraw amount 
-        const withdrawAmountUpdate = updateAmountAdd('withdraw-amount', previousAmountStringConvertedIntoNumber, withdrawStringConvertedIntoNumber);
-
         const balanceAmount = getTextElementFromTag('balance-amount');
         const balanceAmountNumber = stringToNumber(balanceAmount);
-        const updateBalance = updateAmountSub('balance-amount', balanceAmountNumber, withdrawStringConvertedIntoNumber);
-    }
 
+        if (balanceAmountNumber < withdrawStringConvertedIntoNumber) {
+            alert('invalid withdraw');
+        }
+        else {
+            // update withdraw amount 
+            const withdrawAmountUpdate = updateAmountAdd('withdraw-amount', previousAmountStringConvertedIntoNumber, withdrawStringConvertedIntoNumber);
+
+            //Balance Update
+            const updateBalance = updateAmountSub('balance-amount', balanceAmountNumber, withdrawStringConvertedIntoNumber);
+
+        }
+    }
 
 });

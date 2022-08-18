@@ -20,8 +20,4 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
         const updateBalance = updateAmountAdd('balance-amount', depositedStringConvertedIntoNumber, balanceAmountNumber);
     }
 
-
-
-
-
 });
