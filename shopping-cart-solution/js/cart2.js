@@ -7,13 +7,13 @@ function calculateCaseSubtotal(id1, id2, updatedQuantity) {
 }
 
 document.getElementById('plus-btn-case').addEventListener('click', function () {
-    const updatedQuantity = updateMobileQuantity('quantity-case', true);
+    const updatedQuantity = updateQuantity('quantity-case', true);
     const subTotal = calculateCaseSubtotal('update-price-case', 'update-price-mobile', updatedQuantity);
     finalCalculation(subTotal);
 })
 
 document.getElementById('minus-btn-case').addEventListener('click', function () {
-    const updatedQuantity = updateMobileQuantity('quantity-case', false);
+    const updatedQuantity = updateQuantity('quantity-case', false);
 
     if (updatedQuantity >= 0) {
         const subTotal = calculateCaseSubtotal('update-price-case', 'update-price-mobile', updatedQuantity);

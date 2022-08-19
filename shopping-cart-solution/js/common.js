@@ -25,7 +25,7 @@ function stringToNumber (inputString) {
 }
 
 
-function updateMobileQuantity(id, isPlus) {
+function updateQuantity(id, isPlus) {
     const QuantityString = getInputValue(id);
     let Quantity = stringToNumber(QuantityString);
 
