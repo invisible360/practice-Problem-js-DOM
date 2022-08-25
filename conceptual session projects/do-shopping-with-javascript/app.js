@@ -50,32 +50,38 @@ const cards = (obj) => {
     const div = document.createElement('div');
     div.innerHTML = `
     <div class="col">
-        <div class="card">
-            <img src=${obj.img} class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 id="${obj.id + '-course'}" class="card-title">${obj.name}</h5>
-                <p class="card-text">Price: <span id="${obj.id + '-price'}">${obj.price}</span></p>
-                <button id="${obj.id + '-btn'}" class="btn btn-secondary" onclick = 'addToCart(${objToString})'>Add to cart</button>
-            </div>
-        </div>
+    <div class="card">
+    <img src=${obj.img} class="card-img-top" alt="...">
+    <div class="card-body">
+    <h5 id="${obj.id + '-course'}" class="card-title">${obj.name}</h5>
+    <p class="card-text">Price: <span id="${obj.id + '-price'}">${obj.price}</span></p>
+    <button id="${obj.id + '-btn'}" class="btn btn-secondary" onclick = 'addToCart(${objToString})'>Add to cart</button>
+    </div>
+    </div>
     </div>
     `
     cardContainer.appendChild(div);
 }
 
+for (let i = 0; i < arrayOfObject.length; i++) {
+    const element = arrayOfObject[i];
+    cards(element);
+}
 
-let count = 0;
+
 const addToCart = (obj) => {
-    const itemAdded = document.getElementById('selected-item');
-    count++;
-    itemAdded.innerText = count;
+    const objToString = JSON.stringify(obj);
+
+    const selectedItem = parseInt(document.getElementById('selected-item').innerText);
+    const newNumber = selectedItem + 1;
+    document.getElementById('selected-item').innerText = newNumber;
 
     const courseListContainer = document.getElementById('course-name-container');
     const tableRowCourses = document.createElement('tr');
     tableRowCourses.innerHTML = `
-    <th scope="row">${count}</th>
     <td>${obj.name}</td>
     <td id="${obj.id + '-price'}" class = "course-price">${obj.price}</td>
+    <td><button id="${obj.id + '-remove'}" class="border-0 bg-transparent" onclick = 'removeItem(${objToString}, event,)'><img src="images/remove.png" alt="" ></button></td>
     `
     courseListContainer.appendChild(tableRowCourses);
 
@@ -85,9 +91,27 @@ const addToCart = (obj) => {
         sum += parseInt(list.innerText);
     }
     document.getElementById('total-amount').innerText = sum;
+
 }
 
-for (let i = 0; i < arrayOfObject.length; i++) {
-    const element = arrayOfObject[i];
-    cards(element);
+//item remove handler
+const removeItem = (obj, event) => {
+
+    const selectedItem = parseInt(document.getElementById('selected-item').innerText);
+    const newNumber = selectedItem - 1;
+    document.getElementById('selected-item').innerText = newNumber;
+
+    // removing the deleted element 
+    event.target.parentNode.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode.parentNode)
+
+    
+    // updating the price
+    const removePrice = parseInt(event.target.parentNode.parentNode.parentNode.childNodes[3].innerText)
+    const prevTotal = parseInt(document.getElementById('total-amount').innerText);
+    const updateTotalAmount = prevTotal - removePrice;
+
+    document.getElementById('total-amount').innerText = updateTotalAmount;
+
+
 }
+
